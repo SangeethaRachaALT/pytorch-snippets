@@ -5,7 +5,7 @@ import math
 from torch.optim.lr_scheduler import LambdaLR
 
 
-def warmup_cosine_scheduler(optimizer, warmup_steps: int, total_steps: int, min_lr_ratio: float = 0.1):
+def warmup_cosine_scheduler(optimizer, warmup_steps: int, total_steps: int, min_lr_ratio: float = 0.1  # don't decay all the way to zero):
     def lr_lambda(step):
         if step < warmup_steps:
             return float(step) / max(1, warmup_steps)
