@@ -16,3 +16,5 @@ def loader_kwargs(num_workers: int = None, pin_memory: bool = True) -> dict:
 
 if __name__ == "__main__":
     print(loader_kwargs())
+
+# pass with **loader_kwargs() to DataLoader
